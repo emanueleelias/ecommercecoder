@@ -1,0 +1,29 @@
+//Para animaciones uniformes
+@mixin transition($property) {
+    transition: $property 0.2s ease-in-out;
+}
+
+@mixin media-size($medidaMin,$medidaMax) {
+
+    @if $medidaMax == null {
+        @media (min-width: $medidaMin) {
+            @content;  
+        } 
+    
+    } @else if $medidaMin == null {
+        @media (max-width: $medidaMax) {
+            @content;
+        } 
+    
+    } @else {
+        @media (min-width: $medidaMin) and (max-width: $medidaMax) {
+            @content;
+        }
+    }
+}
+
+.shadow {
+    -webkit-box-shadow: 5px 4px 13px 0px rgba(50, 50, 50, 0.32);
+    -moz-box-shadow:    5px 4px 13px 0px rgba(50, 50, 50, 0.32);
+    box-shadow:         5px 4px 13px 0px rgba(50, 50, 50, 0.32);
+    }

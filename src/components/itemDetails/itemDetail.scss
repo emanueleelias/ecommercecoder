@@ -1,0 +1,111 @@
+@import '../../commonStyles/variables';
+@import '../../commonStyles/mixins';
+
+.item-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 10rem auto;
+    height: 50rem; 
+    border-radius: 5px;
+    border: 1px solid $color-grey;
+    @extend .shadow;
+ 
+    &__img {
+        display: flex;
+        width: 100%;
+        height: 50rem;
+        justify-content: center;
+        align-items: center;
+        
+        &-box {
+            width: 500px;
+            height: 400px;
+            background: #CCC;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 2px solid #acacac;
+ 
+            img {
+                width: 100%;
+                height: auto;
+                border-bottom: 1px solid $color-grey;
+            }
+        }
+         
+        @supports(object-fit: cover) {
+            .item-detail__img-box img {
+                height: 100%;
+                object-fit: cover;
+                object-position: center center;
+            }
+        }
+    }
+
+    &__texts {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: .5rem 6rem 5rem 1rem; 
+ 
+        h3 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.4rem;
+            margin: 15px 0 10px 0;
+
+            &:nth-child(3) {
+                margin-bottom: 2rem;
+            }
+        }
+
+        span {
+            font-weight: bolder;
+        }
+    }
+}
+ 
+
+@include media-size(null, $md-small) {
+    .item-detail {
+        &__texts {
+            p {
+                padding: .2rem 1rem;
+            }
+        }
+    }
+}
+
+@include media-size(null, $md-medium) {
+    .item-detail {
+        border: none;
+        margin: 0 auto;
+        height: auto;
+        &__img {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            padding: 0 4px;
+            height: 45rem;
+            &-box {
+                border: none;
+            } 
+        } 
+        
+        &__texts {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            text-align: center;
+            padding: 0 1rem; 
+
+            p {
+                padding: 1rem 5rem;
+            }
+
+            h3 {
+                margin: 0;
+            }
+        }
+    }
+}

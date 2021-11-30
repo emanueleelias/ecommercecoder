@@ -1,0 +1,27 @@
+@import './fonts';
+@import './variables';
+
+html {
+    box-sizing: border-box;
+    font-size: 62.25%;
+    min-height: 100%;
+    position: relative;
+}
+  
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+}
+
+.container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+}

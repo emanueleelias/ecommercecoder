@@ -1,0 +1,26 @@
+@import '../../commonStyles/variables';
+@import '../../commonStyles/mixins';
+ 
+.products {
+    margin: 5rem auto;
+    margin-bottom: 15rem;
+    padding: auto 1rem;
+  
+    &__grid {
+        display: grid;
+        -ms-grid-columns: (minmax(30rem, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+        grid-gap: 2em;
+        margin: auto 1rem;
+    }
+    
+    @media (max-width: 280px) {
+        .products__grid {
+            margin: 2rem auto;
+        }
+    } 
+
+    article {
+        justify-self: center;
+    } 
+}

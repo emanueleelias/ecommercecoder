@@ -1,45 +1,59 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import CartContextProvider from './context/CartContext';
+import { Fragment } from 'react';
+import Navbar from './components/navbar/Navbar';
+import ItemListContainer from './components/itemList/ItemListContainer';
+import Header from './components/layouts/Header';
+import Cart from './components/cart/Cart';
+import AboutUs from './components/layouts/AboutUs';
+import Contact from './components/layouts/Contact';
+import CartClose from './components/cart/CartClose';
+import ItemDetailContainer from './components/itemDetails/ItemDetailContainer';
+import FormCart from './components/cart/FormCart';  
+import Footer from './components/layouts/Footer';
+import NotFound from './components/layouts/NotFound';
+/* import PrivateRoute from './components/route/PrivateRoute'; */
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+      <CartContextProvider>
+        <BrowserRouter>
+          <Fragment>
+
+            <Navbar />
+
+            <Routes>
+
+              <Route path='/inicio' element={<Header />} />
+  
+              <Route path='/sobreNosotros' element={<AboutUs />} />
+
+              <Route path='/contacto' element={<Contact />} />
+
+              <Route path='/:categorieId' element={<ItemListContainer greeting='Nuestras mochilas' />} exact/>
+                
+              <Route path='/cart' element={<Cart />} />
+
+              <Route path='/cart-close' element={<CartClose messageTitle='Compra Terminada' message2='Seguir comprando'/>} /> 
+
+              <Route path='/' element={<ItemListContainer greeting='Nuestras mochilas' />} />
+
+              <Route path='/detalle/:productId' element={<ItemDetailContainer />} />
+ 
+              <Route path='/formulario' element={<FormCart />} /> 
+
+             {/* <PrivateRoute element={<FormCart />} path="/formulario"  exact/> */}
+
+             {/* <Route path="*" element={<NotFound />} /> */}
+
+            </Routes>
+
+            <Footer />
+            
+          </Fragment>
+        </BrowserRouter>
+      </CartContextProvider>
   )
 }
 
-export default App
+export default App;

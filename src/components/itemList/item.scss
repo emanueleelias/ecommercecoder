@@ -1,0 +1,85 @@
+@import '../../commonStyles/variables';
+@import '../../commonStyles/mixins';
+
+.product {
+  border: 1px solid #acacac;
+  border-radius: 5px;
+  width: 351px;
+
+  @extend .shadow; 
+  
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 40px;
+  
+    p {
+      margin: 10px 0;
+      font-size: 1.6rem;  
+    }
+
+    h4 {
+      font-size: 2.2rem;
+      height: 40px;
+      color: $color-secondary;
+    }
+   
+    &-price {  
+      p {
+        font-weight: 600;
+        font-size: 22px;
+      }
+  
+      mark {
+        background: rgba(0, 0, 0, 0);
+        color: $color-tertiary;
+      }
+  
+      span {
+        font-size: 18px;
+        font-weight: 200;
+        text-decoration: line-through;
+      }
+  
+      .price__desc {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+ 
+    &-button {
+      margin-top: 5px;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__img {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background: #4d628a;
+  
+    &-box {
+      width: 349px;
+      height: 400px;
+      background: #CCC;
+      overflow: hidden;
+  
+      img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #acacac;
+      }
+    }
+     
+    @supports(object-fit: cover) {
+      .product__img-box img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+    }
+  }
+}

@@ -1,0 +1,158 @@
+@import '../../commonStyles/variables';
+@import '../../commonStyles/mixins';
+
+table {
+  margin: 8rem 0 0 0;
+  width: 60%;
+  font-size: 1.5rem;
+  background-color: $color-white;
+  border-radius: 10px;
+
+ 
+  thead tr, tbody tr {
+    border-bottom: .5px solid $color-grey;
+  }
+
+  tbody td {
+    padding-top: 8px;
+    text-align: center;
+    position: relative;
+  }
+
+  thead {
+    height: 50px;
+
+    th {
+      position: relative;
+    }
+
+    th:nth-child(1) {
+      width: 20%;
+    }
+ 
+    th:nth-child(2) {
+      width: 20%;
+    }
+
+    th:nth-child(3) {
+      width: 20%;
+    }
+
+    th:nth-child(4) {
+      width: 10%;
+    }
+
+    th:nth-child(5) {
+      width: 10%;
+    }
+
+    th:nth-child(6) {
+      width: 20%;
+    }
+  }
+}
+  
+.containerCartTable {
+  width: 100%;
+  height: auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  
+  .total {
+    td {
+      height: 40px;
+      padding-bottom: 10px;
+    }
+
+    td:nth-child(1) {
+      text-align: right;
+      font-weight: bold;
+    }
+
+    td:nth-child(2) {
+      text-align: center;
+      color: $color-primary;
+      font-weight: bold;
+    }
+
+    td:nth-child(3) {
+      text-align: center;
+    }
+
+  }
+    
+  .iconDelete {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: $color-secondary;
+    transition: transform 250ms cubic-bezier(0.2, 0.8, 0.4, 1);
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+/* #deleteAll {
+  color: $color-black;
+  cursor: pointer;
+
+  span {
+    display: inline-block;
+
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  &:hover {
+    transform: translateX(4px);
+    color: $color-secondary;
+  }
+} */
+
+
+#deleteAll {
+	position: relative;
+  cursor: pointer;
+  padding: 2px;
+
+	span {
+      position: relative;
+
+      &:hover {
+        color: $color-white;
+        font-weight: 500;
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: -0.1px;
+      right: -0.1px;
+      bottom: 0;
+      height: 100%;
+      border-radius: 2px;
+      transform: scaleY(.3);  
+      transition: transform .6s cubic-bezier(0.53, 0.21, 0, 1);
+      transform-origin: bottom;
+      background-color: $color-secondary;
+      opacity: 0.6;
+      
+    }
+  
+    &:hover:before {
+      transform: scaleY(1);
+    }
+  }
+
+  
+  
+  
+ 

@@ -1,0 +1,60 @@
+@import '../../commonStyles/variables';
+@import '../../commonStyles/mixins';
+
+.container-form {
+    max-width:400px;
+	width:100%;
+	margin:0 auto;
+	position:relative;
+    text-align: center;
+    
+}
+ 
+#contact {
+	background: $color-white;
+	padding:25px;
+	margin:50px 0;
+    border-radius: 5px;
+    border: 1px solid $color-grey; 
+    @extend .shadow; 
+
+    h3 {
+        color: $color-primary;
+        display: block;
+        font-size: 3rem;
+        font-weight: 500;
+    }
+
+    h4 {
+        margin:5px 0 20px;
+        display:block;
+        font-size:1.5rem;
+    }
+
+    fieldset {
+        border: medium none !important;
+        margin: 0 0 10px;
+        min-width: 100%;
+        padding: 0;
+        width: 100%;
+    }
+
+    input {
+        width:100%;
+        border:1px solid #CCC;
+        border-radius: 5px;
+        background:#FFF;
+        margin:0 0 5px;
+        padding:10px;
+
+        &:hover {
+            transition:border-color 0.3s ease-in-out;
+	        border:1px solid #AAA;
+        }
+
+        &:focus {
+            outline:0;
+	        border:1px solid #999;
+        }
+    }
+}

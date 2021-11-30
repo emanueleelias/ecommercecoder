@@ -1,0 +1,18 @@
+.container__cartClose {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 30%;
+        margin-bottom: 3rem;
+    }
+
+    p {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+}
