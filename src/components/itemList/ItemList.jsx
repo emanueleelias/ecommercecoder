@@ -12,7 +12,7 @@ const ItemList = memo(({ products, loading }) => {
                     <section className='container products'>
                         <div className='products__grid'>
                             {products.map((res) => {
-                                return <Item key={res.id} id={res.id} stock={res.stock} initial={res.initial} productTitle={res.title} productImage={res.image}  productAltImage={res.altImage}  price={res.price} />
+                                return <Item key={res.id} id={res.id} stock={res.stock} initial={res.initial} productTitle={res.title} productImage={res.image}  productAltImage={res.altImage}  price={res.price}  priceHigh={res.priceHigh}/>
                             })}
                         </div>
                     </section>
