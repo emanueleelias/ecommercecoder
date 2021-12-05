@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import '../../commonStyles/variables';
+@import '../../commonStyles/mixins';
+
+.hero {
+	background: $color-black;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+
+    &__text {
+        font-family: 'Anton', sans-serif;
+        width: 100%;
+        color: transparent;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 150px; 
+        font-weight: bold;
+    
+        background-image: url('../../assets/images/explorer.png');
+        background-size: cover;
+        background-position-y: 450px;
+        
+        background-clip: text;
+        -webkit-background-clip: text;
+    
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+@include media-size(null, $md-small) {
+    .hero__text {
+        font-size: 80px;   
+    } 
+} 
+
+
+.hero-content {
+    display: flex;
+    gap: 3rem;
+    margin: 5rem 0 0 0; 
+    img {
+        width: 50%;
+        border: 1px solid $color-grey;
+        border-radius: 5px;
+        padding: 5px;  
+    }
+
+    .texts-one {
+        align-self: center;
+        width: 80%;
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        p {
+            margin: 2rem 0;
+            font-size: 1.4rem;
+        }
+        
+    }
+}
+
+@include media-size(null, $md-small) {
+    .hero-content {
+        flex-direction: column;
+
+        img {
+            width: 100%;
+        }
+
+        .texts-one {
+            text-align: center; 
+        }
+    }
+}
+
+.hero-content-two {
+    display: flex;
+    gap: 3rem;
+    
+
+    .texts-two {
+        order: 1;
+        text-align: right;
+        align-self: center;
+        width: 80%;
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        p {
+            margin: 2rem 0; 
+            
+            font-size: 1.4rem;
+            align-self: flex-end;
+        }
+    }
+
+    img {
+        width: 50%;
+        border: 1px solid $color-grey;
+        border-radius: 5px;
+        padding: 5px;  
+        order:2;
+    }
+}
+
+@include media-size(null, $md-small) {
+    .hero-content-two {
+        flex-direction: column;
+        order: 1;
+        img {
+            margin-top: 2rem;
+            width: 100%;
+        } 
+
+        .texts-two {
+            order: 2;
+            text-align: center;
+        }
+    }
+
+}
+
+
+

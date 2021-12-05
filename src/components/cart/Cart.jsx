@@ -1,13 +1,9 @@
 import { useCartContext } from '../../context/CartContext';
-import { useState  } from 'react';
-import { getFirestore } from '../../service/getFirestore';
 import TableCart from './TableCart';
 import Button from '../commons/Button';
-import firebase from 'firebase'
-import 'firebase/firestore'
+import CartClose from '../cart/CartClose';
 import { Link } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
-import CartClose from './CartClose';
 import './cart.scss';
 
 
@@ -28,7 +24,7 @@ const Cart = () => {
                      
                     </div>
                 :
-                    <p>asdasdas</p>
+                    <CartClose messageTitle='El carrito se encuentra vacio' message2='Hace tu primera compra' id=''/>
                    
             }
         </>
@@ -36,13 +32,3 @@ const Cart = () => {
 }
 
 export default Cart;
-
- {/* <CartClose messageTitle='¡El carrito esta vacio!' message2='Mira nuestros productos' id={1} img='./emptyCart.svg'/> */}
-
-{/* <div>
-{idOrder !== '' 
-    &&
-        <CartClose messageTitle='Felicidades por su compra' message2='Seguir comprando' id={idOrder} />
-} 
-</div>
- */}

@@ -27,4 +27,4 @@ const CartClose = ({messageTitle, message2, id }) => {
     )
 }
 
-export default CartClose
+export default CartClose;

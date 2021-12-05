@@ -1,11 +1,26 @@
+@import '../../commonStyles/variables';
+@import '../../commonStyles/mixins';
+
+
 .contact {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 50%;
   }
-  
-  .contact h2 {
-    font-size: 3rem;
+
+  text-align: center;
+}
+
+@include media-size(null, $md-small) {
+  .contact {
+    flex-direction: column;
+    
+    img {
+      width: 100%;
+      margin-top: 4rem;  
+    }
   }
-  
+}

@@ -13,21 +13,15 @@ const ItemListContainer = ({ greeting }) => {
 
     useEffect(() => {
         const db = getFirestore();
-
-        if (categorieId) {
-            const dbQuery = db.collection('products').where('category', '==', categorieId).get();
-            dbQuery
-                .then(resp => setData( resp.docs.map( prod => ({ id:prod.id, ...prod.data() }))))
-                .catch((err) => console.log(err))
-               setLoading(false);
-        } else {
-            const dbQuery = db.collection('products').get(); 
-            dbQuery
-                .then(resp => setData( resp.docs.map( prod => ({ id: prod.id, ...prod.data() } ))))
-                .catch((err) => console.log(err))
-            setLoading(false) 
-        }
-
+            const dbQuery = 
+                categorieId === undefined
+                    ? db.collection('products')
+                    : db.collection('products').where('category', '==', categorieId)
+                dbQuery
+                    .get()
+                    .then(resp => setData( resp.docs.map( prod => ({ id:prod.id, ...prod.data() }))))
+                    .catch((err) => console.log(err))
+                    .finally(setTimeout(() => {setLoading(false)}, 2200));
     }, [categorieId]);
 
     return (

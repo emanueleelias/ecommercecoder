@@ -1,10 +1,10 @@
 @import '../../commonStyles/variables';
 @import '../../commonStyles/mixins';
 
-.product {
-  border: 1px solid #acacac;
-  border-radius: 5px;
-  width: 351px;
+.product { 
+  border: 1px solid #acacac;   
+  border-radius: 5px; 
+  width: 350px;
 
   @extend .shadow; 
   
@@ -60,17 +60,21 @@
     justify-content: center;
     align-items: center;
     background: #4d628a;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   
     &-box {
-      width: 349px;
+      width: 348px;
       height: 400px;
       background: #CCC;
       overflow: hidden;
-  
+   
       img {
         width: 100%;
         height: auto;
-        border-bottom: 1px solid #acacac;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        /* border-bottom: 1px solid #acacac; */
       }
     }
      

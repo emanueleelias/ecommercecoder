@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ItemCount from './ItemCount';
+import Spinner from '../commons/Spinner';
 import { useCartContext } from '../../context/CartContext';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -25,6 +26,7 @@ const ItemDetail = (props) => {
     //utilizando la función addItem del cartContext
     const { addItem } = useCartContext();
     const { stock, initial, altImage, title, description, image, price } = props.product;
+    const { loading } = props;
     const [total, setTotal] = useState(1);
 
 
@@ -49,27 +51,34 @@ const ItemDetail = (props) => {
 
 
     return (
-        <div className='item-detail'>
-  
-            <div className='item-detail__img'>
-                <div className='item-detail__img-box'>
-                    <img src={image} alt={altImage} />
-                </div>
-            </div>
+        <>
+            {loading
+            ?
+                <Spinner />
+            :
+                <div className='item-detail'>
+            
+                    <div className='item-detail__img'>
+                        <div className='item-detail__img-box'>
+                            <img src={image} alt={altImage} />
+                        </div>
+                    </div>
 
-            <section className='item-detail__texts'>
-                <h3>{title}</h3>
-                <p><span>Descripción: </span>{description}</p>
-                <p><span>Precio: </span>$ {price}.</p>
-                <ItemCount
-                    productStock={stock}
-                    productInitial={initial}
-                    onAdd={onAdd}
-                    toast={notify}
-                    productTitle={title}
-                />
-            </section>
-        </div>
+                    <section className='item-detail__texts'>
+                        <h3>{title}</h3>
+                        <p><span>Descripción: </span>{description}</p>
+                        <p><span>Precio: </span>$ {price}.</p>
+                        <ItemCount
+                            productStock={stock}
+                            productInitial={initial}
+                            onAdd={onAdd}
+                            toast={notify}
+                            productTitle={title}
+                        />
+                    </section>
+                </div>
+            }
+        </>
     );
 };
 

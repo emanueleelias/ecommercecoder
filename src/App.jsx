@@ -3,7 +3,7 @@ import CartContextProvider from './context/CartContext';
 import { Fragment } from 'react';
 import Navbar from './components/navbar/Navbar';
 import ItemListContainer from './components/itemList/ItemListContainer';
-import Header from './components/layouts/Header';
+import Home from './components/layouts/Home';
 import Cart from './components/cart/Cart';
 import AboutUs from './components/layouts/AboutUs';
 import Contact from './components/layouts/Contact';
@@ -13,7 +13,7 @@ import FormCart from './components/cart/FormCart';
 import Footer from './components/layouts/Footer';
 import NotFound from './components/layouts/NotFound';
 /* import PrivateRoute from './components/route/PrivateRoute'; */
-
+ 
 function App() {
   return (
       <CartContextProvider>
@@ -24,7 +24,7 @@ function App() {
 
             <Routes>
 
-              <Route path='/inicio' element={<Header />} />
+              <Route path='/inicio' element={<Home />} />
   
               <Route path='/sobreNosotros' element={<AboutUs />} />
 

@@ -1,8 +1,9 @@
 import Item from './Item';
+import { memo } from 'react'
 import Spinner from '../commons/Spinner';
 import './itemList.scss';
 
-const ItemList = ({products, loading}) => {
+const ItemList = memo(({products, loading}) => {
     return (
         <>
             {loading ? (
@@ -22,6 +23,6 @@ const ItemList = ({products, loading}) => {
             )}
         </>
     );
-};
+});
 
 export default ItemList;

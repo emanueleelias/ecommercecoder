@@ -1,11 +1,11 @@
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { useCartContext } from '../../context/CartContext';
 import { getFirestore } from '../../service/getFirestore';
 import congratulations from '../../assets/images/congratulations.svg'
-import firebase from 'firebase'
+import firebase from 'firebase/app';
+import 'firebase/database';
 import CartClose from "./CartClose";
-import 'firebase/firestore'
 import '../commons/Button';
 import './formCart.scss';
 
@@ -53,6 +53,7 @@ const FormCart = () => {
          })     
     } 
 
+
     const onSubmit = (data, e) => {
         setDataForm(data)
         generateOrder(data);
@@ -63,41 +64,49 @@ const FormCart = () => {
 
     return (
         <>
-        {idOrder === ''
-            ?
-                <div className="container-form">
-                    <form id='contact' onSubmit={handleSubmit(onSubmit)}>
-                        <h3>Formulario de compra</h3>
-                        <h4>Completa tus tados para finalizar la compra</h4>
-            
-                        <fieldset>
-                            <input placeholder="Tu nombre" {...register("nombre", { required: 'El nombre no puede quedar vacio'})} />
-                            {errors.nombre && <span>{errors.nombre.message}</span>}
-                        </fieldset>
-
-                        <fieldset>
-                            <input placeholder="Tu apellido" {...register("apellido", { required: 'El apellido no puede quedar vacio'})} />
-                            {errors.apellido && <span>{errors.apellido.message}</span>}
-                        </fieldset>
-                        
-                        <fieldset>
-                            <input placeholder="example@correo.com" {...register("email", { pattern: {value: regularExpresionMail, message: <p>El email es invalido</p>}, required: 'Debe ingresar un email'})} />
-                            {errors.email && <span>{errors.email.message}</span>}
-                        </fieldset>
-                    
-                        <fieldset>
-                            <input placeholder="Repeti el correo electrónico" {...register("emailValidation", { pattern:{value: regularExpresionMail, message: <p>El email es invalido</p>}, required: 'Debe ingresar un email', validate: value => value === watch('email') || <p>Los emails no coinciden</p>})} />
-                            {errors.emailValidation && <span>{errors.emailValidation.message}</span>}
-                        </fieldset>
+            {
+            idOrder === ''
+                ?
+                    <div className="container-form">
+                        <form id='contact' onSubmit={handleSubmit(onSubmit)}>
+                            <h3>Formulario de compra</h3>
+                            <h4>Completa tus tados para finalizar la compra</h4>
                 
-                        <button className="button" type="submit">Enviar</button>
-                    </form>
-                </div>
-            :
-                <CartClose messageTitle='¡Felicidades por su compra!' message2='Ir al inicio' id={idOrder} img={congratulations}/>
+                            <fieldset>
+                                <input placeholder="Tu nombre" {...register("nombre", { required: 'El nombre no puede quedar vacio'})} />
+                                <div className="error">
+                                    {errors.nombre && <span>{errors.nombre.message}</span>}
+                                </div> 
+                            </fieldset>
 
-        }
-        
+                            <fieldset>
+                                <input placeholder="Tu apellido" {...register("apellido", { required: 'El apellido no puede quedar vacio'})} />
+                                <div className="error">
+                                    {errors.apellido && <span>{errors.apellido.message}</span>}
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <input placeholder="example@correo.com" {...register("email", { pattern: {value: regularExpresionMail, message: <p>El email es invalido</p>}, required: 'Debe ingresar un email'})} />
+                                <div className="error">
+                                    {errors.email && <span>{errors.email.message}</span>}
+                                </div>
+                            </fieldset>
+                        
+                            <fieldset>
+                                <input placeholder="Repeti el correo electrónico" {...register("emailValidation", { pattern:{value: regularExpresionMail, message: <p>El email es invalido</p>}, required: 'Debe ingresar un email', validate: value => value === watch('email') || <p>Los emails no coinciden</p>})} /> 
+                                <div className="error">
+                                    {errors.emailValidation && <span>{errors.emailValidation.message}</span>}
+                                </div>
+                            </fieldset>
+                    
+                            <button className="button" type="submit">Enviar</button>
+                        </form>
+                    </div>
+                :
+                    <CartClose messageTitle='¡Felicidades por su compra!' message2='Ir al inicio' id={idOrder} img={congratulations}/>
+
+            }
         </>
     );
 }
