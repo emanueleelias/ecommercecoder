@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import ItemCount from './ItemCount';
-import Spinner from '../commons/Spinner';
+import { useState } from 'react';
 import { useCartContext } from '../../context/CartContext';
 import { toast } from 'react-toastify';
+import ItemCount from './ItemCount';
+import Spinner from '../commons/Spinner';
 import 'react-toastify/dist/ReactToastify.css';
 import './itemDetail.scss';
 
 
-const CustomToast = ({total, mensaje, product}) => {
+const CustomToast = ({ total, mensaje, product }) => {
     const style = {
         fontSize: 15,
         color: 'black'
@@ -23,7 +23,6 @@ const CustomToast = ({total, mensaje, product}) => {
 toast.configure();
 
 const ItemDetail = (props) => {
-    //utilizando la función addItem del cartContext
     const { addItem } = useCartContext();
     const { stock, initial, altImage, title, description, image, price } = props.product;
     const { loading } = props;
@@ -44,7 +43,6 @@ const ItemDetail = (props) => {
 
     const onAdd = (total, mensaje, type, product) => {
         setTotal(total);
-        //Agregp la información del item comprado y la cantidad seleccionada.
         addItem({props, amount: total});
         notify(total, mensaje, type, product);
     };

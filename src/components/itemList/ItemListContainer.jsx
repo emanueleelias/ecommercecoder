@@ -1,12 +1,11 @@
 import { NavLink } from 'react-router-dom'; 
-import ItemList from './ItemList';
 import { getFirestore } from '../../service/getFirestore';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import ItemList from './ItemList';
 import './itemListContainer.scss';
  
 const ItemListContainer = ({ greeting }) => {
-
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const { categorieId } = useParams();

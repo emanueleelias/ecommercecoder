@@ -13,7 +13,7 @@ const Home = () => {
  
             <div className='container home'>
                 <section className='hero-content'>
-                    <img src={backpackRoute} alt="" />
+                    <img src={backpackRoute} alt="Imagen mochila con ruta" />
                     <div className="texts-one">
                         <h2>Mochilas de la mejor calidad</h2>
                         <p>Para tus viajes tenes que tener una mochila de excelente calidad, los mejores paseos y salidas tienen que ir acompañadas de la seguridad de una mochila donde podes poner todas tus cosas.</p>
@@ -25,7 +25,7 @@ const Home = () => {
                 </section>
 
                 <section className='hero-content-two'>
-                    <img src={backpackTravel} alt="" />
+                    <img src={backpackTravel} alt="Imagen de viajes por el mundo" />
                     <div className="texts-two">
                         <h2>Que te acompañen en todo momento</h2>
                         <p>Cada mochila es confeccionada con materiales de primera calidad, ya sea que la uses en la ciudad, la necesites para salir de viaje, o quieras guardar tus dispositivos electronicos, no lo dudes, somos la mejor opción.</p>

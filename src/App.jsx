@@ -11,7 +11,6 @@ import CartClose from './components/cart/CartClose';
 import ItemDetailContainer from './components/itemDetails/ItemDetailContainer';
 import FormCart from './components/cart/FormCart';  
 import Footer from './components/layouts/Footer';
-/* import NotFound from './components/layouts/NotFound'; */
 import './commonStyles/main.scss';
  
 function App() {
@@ -41,10 +40,6 @@ function App() {
               <Route path='/detalle/:productId' element={<ItemDetailContainer />} />
  
               <Route path='/formulario' element={<FormCart />} /> 
-
-             {/* <PrivateRoute element={<FormCart />} path="/formulario"  exact/> */}
-
-             {/* <Route path="*" element={<NotFound />} /> */}
 
             </Routes>
 

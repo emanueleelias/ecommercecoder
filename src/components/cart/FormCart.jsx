@@ -3,13 +3,12 @@ import { useState } from 'react';
 import { useCartContext } from '../../context/CartContext';
 import { getFirestore } from '../../service/getFirestore';
 import congratulations from '../../assets/images/congratulations.svg'
+import CartClose from "./CartClose";
 import firebase from 'firebase/app';
 import 'firebase/database';
-import CartClose from "./CartClose";
 import '../commons/Button';
 import './formCart.scss';
 
- 
 const FormCart = () => {
     const { cartList, priceTotal, clearCart } = useCartContext();
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -32,25 +31,25 @@ const FormCart = () => {
         }
         
         //Agregar en la base de datos
-       const dbQuery = getFirestore();
-        dbQuery.collection('orders').add(order)
-        .then( resp => setIdOrder(resp.id))
-        .catch(err => console.log(err))
-        .finally(console.log("Finalizo orden")); 
+        const dbQuery = getFirestore();
+            dbQuery.collection('orders').add(order)
+            .then( resp => setIdOrder(resp.id))
+            .catch(err => console.log(err))
+            .finally(console.log("Finalizo orden")); 
 
         const itemsToUpdate = dbQuery.collection('products').where(firebase.firestore.FieldPath.documentId(), 'in', cartList.map(i => i.id))
 
         const batch = dbQuery.batch();
 
-         itemsToUpdate.get()
-         .then( collection => {
-             collection.docs.forEach(docSnapshot => {
-                 batch.update(docSnapshot.ref, {
-                     stock: docSnapshot.data().stock - cartList.find(item => item.id === docSnapshot.id).amount
-                 })
-             })
-             batch.commit().then(res => console.log('resultado batch: ', res))
-         })     
+        itemsToUpdate.get()
+            .then( collection => {
+                collection.docs.forEach(docSnapshot => {
+                    batch.update(docSnapshot.ref, {
+                        stock: docSnapshot.data().stock - cartList.find(item => item.id === docSnapshot.id).amount
+                    })
+                })
+                batch.commit().then(res => console.log('resultado batch: ', res))
+            })     
     } 
 
 
@@ -59,8 +58,6 @@ const FormCart = () => {
         generateOrder(data);
         e.target.reset();
     };
-
-    console.log(dataForm);
 
     return (
         <>
@@ -105,7 +102,6 @@ const FormCart = () => {
                     </div>
                 :
                     <CartClose messageTitle='¡Felicidades por su compra!' message2='Ir al inicio' id={idOrder} img={congratulations}/>
-
             }
         </>
     );

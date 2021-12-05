@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import ItemDetail from '../itemDetails/ItemDetail';
 import { getFirestore } from '../../service/getFirestore';
+import ItemDetail from '../itemDetails/ItemDetail';
 
 const ItemDetailContainer = () => {
-
     const [dataDetail, setDataDetail] = useState({});
     const [loading, setLoading] = useState(true);
     const { productId } = useParams();
     
-   
     useEffect(() => {
         const db = getFirestore();
         const dbQuery = db.collection('products').doc(productId).get();
@@ -23,7 +21,7 @@ const ItemDetailContainer = () => {
         <div className='container'>          
             <ItemDetail product={dataDetail} loading={loading}/>    
         </div>
-    )
+    );
 };
 
 export default ItemDetailContainer;

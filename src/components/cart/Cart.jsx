@@ -1,16 +1,13 @@
 import { useCartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
 import TableCart from './TableCart';
 import Button from '../commons/Button';
-/* import CartClose from '../cart/CartClose'; */
 import CartClose from '../cart/CartClose';
-import { Link } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import './cart.scss';
 
-
 const Cart = () => {
     const { cartList, priceTotal, clearCart, removeItem} = useCartContext();
-
     return (
         <>
             {

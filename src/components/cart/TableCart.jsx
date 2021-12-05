@@ -38,7 +38,6 @@ function useColumns() {
 }
 
 function useRows(listaProducts, removeItem) {
-    
     const rows = 
         listaProducts.map( (p) => {
             return (
@@ -55,8 +54,7 @@ function useRows(listaProducts, removeItem) {
     return rows;
 }
 
-export const TableCart = ({clearCart, cartList, priceTotal, removeItem}) => {
-
+export const TableCart = ({ clearCart, cartList, priceTotal, removeItem }) => {
     const columns = useColumns();
     const data = useRows(cartList, removeItem);
     const table = useTable({ columns, data }); 

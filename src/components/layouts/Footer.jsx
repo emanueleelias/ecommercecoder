@@ -1,4 +1,3 @@
-import React from 'react';
 import { FiFacebook, FiInstagram } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import './footer.scss';

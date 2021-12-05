@@ -4,14 +4,14 @@
 
 
 ## Demo del Proyecto
-- [BackPacks Tienda de mochilas]()
+- [BackPacks Tienda de mochilas](https://backpacks-ecommerce.netlify.app/)
 
 ## Contenido
 - Este proyecto tiene una única rama, main.
 - Proyecto de muestra para el curso y el portafolio de Emanuele Elias Daniel.
 
 ## Objetivos y Características
-El objetvo del proyecto es crear una E-commerce, donde se venda algun tipo de producto, los productos de la tienda son traidos de una base de datos, en este caso `Firestores` de Firebase. Ademas la tienda debe ser una SPA (Single Page Application), es decir una aplicación de página única, ,donde se puede navegar entre distintas páginas, categorias de productos, etc sin que la página se recargue.
+El objetvo del proyecto es crear una E-commerce, donde se venda algun tipo de producto, los productos de la tienda son traidos de una base de datos, en este caso `Firestores` de Firebase. Ademas la tienda debe ser una SPA (Single Page Application), es decir una aplicación de página única, ,donde se puede navegar entre distintas páginas, categorías de productos, etc. sin que la página se recargue.
 En la página se va a poder los productos estan filtrados por categorias, se pueden ver las mochilas urbanas, mochilas para notebook y mochilas para viajar, ademas de poder ver todas las mochilas. Siguiendo con el flujo se puede ingresar al detalle de un producto, desde ahi seleccionar la cantidad de productos a comprar y finalizar la compra o seguir comprando. Si se seleccionar finalizar la compra nos dirige al carrito, desde el carrito al finalizar la compra se debe completar un formulario para terminar con la compra.
 
 ## Tenología
@@ -81,7 +81,7 @@ Las librerias utilizadas en el proyecto son las siguientes:
 ![Sobre Nosotros](https://i.ibb.co/7vvJVdh/Sobre-Nosotros.gif)
 
 ## Licencia
-- [EDE](https://www.linkedin.com/in/eliasdanielemanuele/
+- [EDE](https://www.linkedin.com/in/eliasdanielemanuele/)
 Emanuele, Elias Daniel
 
 

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext } from 'react';
 
 const CartContext = createContext([]);
 
@@ -34,7 +34,6 @@ const CartContextProvider = ({ children }) => {
     const clearCart = () => {
         setCartList([]);
     };
-
 
     //Devuelve verdadero si el imtem se encuentra dentro del carrito, de lo contrario falso.
     const isInCart = (itemId) => cartList.some( (product) => product.id === itemId);
