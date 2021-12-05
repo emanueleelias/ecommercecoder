@@ -11,8 +11,8 @@ import CartClose from './components/cart/CartClose';
 import ItemDetailContainer from './components/itemDetails/ItemDetailContainer';
 import FormCart from './components/cart/FormCart';  
 import Footer from './components/layouts/Footer';
-import NotFound from './components/layouts/NotFound';
-/* import PrivateRoute from './components/route/PrivateRoute'; */
+/* import NotFound from './components/layouts/NotFound'; */
+import './commonStyles/main.scss';
  
 function App() {
   return (

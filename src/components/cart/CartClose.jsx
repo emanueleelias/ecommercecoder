@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { useCartContext } from "../../context/CartContext";
 import emptyCart from '../../assets/images/emptyCart.svg';
 import './cartClose.scss';

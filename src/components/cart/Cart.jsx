@@ -1,6 +1,7 @@
 import { useCartContext } from '../../context/CartContext';
 import TableCart from './TableCart';
 import Button from '../commons/Button';
+/* import CartClose from '../cart/CartClose'; */
 import CartClose from '../cart/CartClose';
 import { Link } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
