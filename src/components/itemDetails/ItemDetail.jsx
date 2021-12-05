@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useCartContext } from '../../context/CartContext';
 import { toast } from 'react-toastify';
+import Fade from 'react-reveal/Fade';
 import ItemCount from './ItemCount';
 import Spinner from '../commons/Spinner';
 import 'react-toastify/dist/ReactToastify.css';
@@ -54,6 +55,7 @@ const ItemDetail = (props) => {
             ?
                 <Spinner />
             :
+            <Fade right>
                 <div className='item-detail'>
             
                     <div className='item-detail__img'>
@@ -75,6 +77,7 @@ const ItemDetail = (props) => {
                         />
                     </section>
                 </div>
+            </Fade>
             }
         </>
     );

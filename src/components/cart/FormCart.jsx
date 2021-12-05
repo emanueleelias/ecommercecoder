@@ -8,6 +8,7 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import '../commons/Button';
 import './formCart.scss';
+import Fade from 'react-reveal/Fade';
 
 const FormCart = () => {
     const { cartList, priceTotal, clearCart } = useCartContext();
@@ -64,6 +65,7 @@ const FormCart = () => {
             {
             idOrder === ''
                 ?
+                <Fade bottom>
                     <div className="container-form">
                         <form id='contact' onSubmit={handleSubmit(onSubmit)}>
                             <h3>Formulario de compra</h3>
@@ -100,6 +102,7 @@ const FormCart = () => {
                             <button className="button" type="submit">Enviar</button>
                         </form>
                     </div>
+                </Fade>
                 :
                     <CartClose messageTitle='¡Felicidades por su compra!' message2='Ir al inicio' id={idOrder} img={congratulations}/>
             }
