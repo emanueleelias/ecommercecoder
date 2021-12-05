@@ -43,6 +43,7 @@ Las librerias utilizadas en el proyecto son las siguientes:
 - `react-icons v4.3.1`: Incluye íconos populares para usar en proyectos de React fácilmente, utiliza importaciones de ES6 que permiten incluir solo los íconos que se usan en el proyecto. Más información [aquí.](http://react-icons.github.io/react-icons/)
 - `react-table v7.7.0`: Sirve para crear y diseñar potentes experiencias de tablas de datos a la vez que se conserva el 100% de control sobre el marcado y los estilos, utilizada para mostrar la información en el carrito de compras. Más información [aquí.](https://react-table.tanstack.com/)
 - `react-toastify v8.1.0`: Dependencia que facilita mostrar mensajes de los llamados toasty. Más información [aquí.](https://fkhadra.github.io/react-toastify/introduction)
+- `react-reveal v1.2.2`: Liberia para trabajar los efectos. Más información [aquí](https://www.react-reveal.com/)
 
 ## Principales componentes del proyecto
 
