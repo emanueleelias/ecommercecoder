@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useCartContext } from '../../context/CartContext';
 import { getFirestore } from '../../service/getFirestore';
 import congratulations from '../../assets/images/congratulations.svg'
@@ -9,14 +9,30 @@ import 'firebase/database';
 import '../commons/Button';
 import './formCart.scss';
 import Fade from 'react-reveal/Fade';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const CustomToast = ({ mensaje }) => {
+    const style = {
+        fontSize: 15,
+        color: 'black'
+    }; 
+
+    return (
+        <div>
+            <p style={style}>{`${mensaje}`}</p>
+        </div>
+    )
+}
 
 const FormCart = () => {
-    const { cartList, priceTotal, clearCart } = useCartContext();
+    const { cartList, priceTotal } = useCartContext();
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const regularExpresionMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const [dataForm, setDataForm] = useState({});
     const [idOrder, setIdOrder] = useState('');
     
+
     const generateOrder = (dataForm) => {
         const order = 
         {
@@ -55,9 +71,16 @@ const FormCart = () => {
 
 
     const onSubmit = (data, e) => {
-        setDataForm(data)
-        generateOrder(data);
-        e.target.reset();
+        if (cartList.length === 0) {
+            toast.warn(<CustomToast mensaje={'Para completar este formulario debe tener al menos un producto en el carrito'} />, {
+                position: toast.POSITION.BOTTOM_CENTER,
+                autoClose: 3000})
+            e.target.reset();
+        }else { 
+            setDataForm(data);
+            generateOrder(data);
+            e.target.reset();
+        } 
     };
 
     return (

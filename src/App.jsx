@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import CartContextProvider from './context/CartContext';
 import { Fragment } from 'react';
+import CartContextProvider from './context/CartContext';
 import Navbar from './components/navbar/Navbar';
 import ItemListContainer from './components/itemList/ItemListContainer';
 import Home from './components/layouts/Home';

@@ -34,6 +34,9 @@ $ yarn run dev  //Para iniciar el proyecto.
 
 - Por mayor información [Click Aquí.](https://docs.github.com/es/repositories/creating-and-managing-repositories/cloning-a-repository)
 
+## Estilos
+Para los estilos se utilizo sass, cada componente es acompañado por su archivo escrito en sass que le provee de estilos al mismo. a su vez en la carpeta **commonStyles** se encuentrna los estilos base e incluso utilidades que se usan en más de un lugar dentro del proyecto. El archivo main.scss esta dentro de esta carpeta y se lo importa dentro de App.jsx.
+
 ## Complementos
 Las librerias utilizadas en el proyecto son las siguientes:
 

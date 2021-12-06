@@ -44,9 +44,9 @@ function useRows(listaProducts, removeItem) {
                 {
                     image: <img src={p.image} alt={p.altImg} width='88px' height='100px' />,
                     title: p.title,
-                    unitPrice: `$ ${p.price}`,
-                    quantity: `${p.amount} unidades`,
-                    price: `$ ${p.amount * p.price}`,
+                    unitPrice: `$${p.price}`, 
+                    quantity: `${p.amount}`,
+                    price: `$${p.amount * p.price}`,
                     delete: <AiTwotoneDelete className='iconDelete' onClick={ () => removeItem(p.id) }/>
                 }
             )
@@ -106,9 +106,9 @@ export const TableCart = ({ clearCart, cartList, priceTotal, removeItem }) => {
                         }) 
                     }
                     <tr className='total'>
-                        <td colSpan='4'>Precio Total</td>
-                        <td>{`$ ${priceTotal()}`}</td> 
-                        <td>
+                        <td colSpan='2'>Precio Total</td>
+                        <td colSpan='2'>{`$ ${priceTotal()}`}</td> 
+                        <td colSpan='2'>
                             <a id='deleteAll' onClick={clearCart}>
                                 <span>Eliminar carrito</span>
                             </a>

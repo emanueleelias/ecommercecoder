@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import imgContact from '../../assets/images/contact.svg';
 import './contact.scss';
 import 'react-toastify/dist/ReactToastify.css';
+import Fade from 'react-reveal/Fade';
 
 toast.configure();
 
@@ -33,32 +34,37 @@ const Contact = () => {
 
     return (
         <div className="container contact">
-            <img src={imgContact} alt="Imágen de contacto" />
-            <div>
-                <form id='contact' onSubmit={handleContact}>
-                    <h3>Dejanos tu mensaje</h3>
-                
-                    <fieldset>
-                        <input placeholder="Tu nombre" {...register("nombre", { required: 'El nombre no puede quedar vacio'})} />
-                        {errors.nombre && <span>{errors.nombre.message}</span>}
-                    </fieldset>
-                    <fieldset>
-                        <input placeholder="Tu apellido" {...register("apellido", { required: 'El apellido no puede quedar vacio'})} />
-                        {errors.apellido && <span>{errors.apellido.message}</span>}
-                    </fieldset>
-                            
-                    <fieldset>
-                        <input placeholder="example@correo.com" {...register("email", { pattern: {value: regularExpresionMail, message: <p>El email es invalido</p>}, required: 'Debe ingresar un email'})} />
-                        {errors.email && <span>{errors.email.message}</span>}
-                    </fieldset>
+            <Fade left>
+                <img src={imgContact} alt="Imágen de contacto" />
+            </Fade>
 
-                    <fieldset>
-                        <textarea placeholder="Escriba su mensaje aquí...." required></textarea>
-                    </fieldset>
+            <Fade right>
+                <div>
+                    <form id='contact' onSubmit={handleContact}>
+                        <h3>Dejanos tu mensaje</h3>
+                    
+                        <fieldset>
+                            <input placeholder="Tu nombre" {...register("nombre", { required: 'El nombre no puede quedar vacio'})} />
+                            {errors.nombre && <span>{errors.nombre.message}</span>}
+                        </fieldset>
+                        <fieldset>
+                            <input placeholder="Tu apellido" {...register("apellido", { required: 'El apellido no puede quedar vacio'})} />
+                            {errors.apellido && <span>{errors.apellido.message}</span>}
+                        </fieldset>
+                                
+                        <fieldset>
+                            <input placeholder="example@correo.com" {...register("email", { pattern: {value: regularExpresionMail, message: <p>El email es invalido</p>}, required: 'Debe ingresar un email'})} />
+                            {errors.email && <span>{errors.email.message}</span>}
+                        </fieldset>
 
-                    <button className="button" type="submit">Enviar</button>
-                </form>
-            </div>
+                        <fieldset>
+                            <textarea placeholder="Escriba su mensaje aquí...." required></textarea>
+                        </fieldset>
+
+                        <button className="button" type="submit">Enviar</button>
+                    </form>
+                </div>
+            </Fade>
         </div>
     )
 }
