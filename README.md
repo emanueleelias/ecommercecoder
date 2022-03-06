@@ -29,8 +29,8 @@ Abra un terminal y utilize los siguientes comandos:
 
   $ git clone https://github.com/emanueleelias/ecommercecoder.git
   $ cd ecommercecoder
-  $ yarn //Para instalar todas las dependencias que se utilizaron en el proyecto.
-  $ yarn run dev  //Para iniciar el proyecto.
+  $ yarn
+  $ yarn run dev
 
 - Para mayor información [Click Aquí.](https://docs.github.com/es/repositories/creating-and-managing-repositories/cloning-a-repository)
 
