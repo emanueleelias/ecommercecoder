@@ -25,12 +25,13 @@ Este proyecto se está desarrolando en React-js utilizando vite (creador de proy
 BackPacks requiere [Node.js](https://nodejs.org/en/) para ejecutarse.
 Abra un terminal y utilize los siguientes comandos:
 
-`
-$ git clone https://github.com/emanueleelias/ecommercecoder.git
-$ cd ecommercecoder
-$ yarn //Para instalar todas las dependencias que se utilizaron en el proyecto.
-$ yarn run dev  //Para iniciar el proyecto.
-`
+{% filename %}command-line{% endfilename %}
+
+  $ git clone https://github.com/emanueleelias/ecommercecoder.git
+  $ cd ecommercecoder
+  $ yarn //Para instalar todas las dependencias que se utilizaron en el proyecto.
+  $ yarn run dev  //Para iniciar el proyecto.
+
 - Para mayor información [Click Aquí.](https://docs.github.com/es/repositories/creating-and-managing-repositories/cloning-a-repository)
 
 ## Estilos
